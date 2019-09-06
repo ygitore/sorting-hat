@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to Hoggy Hoggy Warts!</h1>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <hr class="my-4">
+        <a href="#" class="sorting-button" id="sorting">Let's Start Sorting!</a>
+    </div>
+    <form id="formid">
+        <label>Enter First Year's Name</label>
+        <div class="form-row align-items-center">
+          <div class="col-auto">
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">Student: </div>
+              </div>
+              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="@NSS Student">
+            </div>
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-2" id ="sortingId">Submit</button>
+          </div>
+        </div>
+      </form>
+    <div class="stu-info"></div>
+    <script src="./main.js"></script>
+</body>
+</html>
