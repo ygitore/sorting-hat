@@ -4,3 +4,15 @@ body{
 .sorting-button{
     border-bottom: 1px solid green;
 }
+.stud-info{
+    
+    display: flex;    
+    justify-content: space-around;
+    flex-grow: 1;    
+    margin: 5px;
+    width: 30%;
+}
+.stud-container{
+    border: 1px solid green;
+    flex-direction: row;
+}
