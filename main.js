@@ -1,8 +1,6 @@
 var house = ['Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin'];
 let random_house = Math.floor(Math.random()*house.length);
 let studHouse = house[random_house];
-const fid = [];
-const studId = [];
 function myFunction()
 {
   var x = document.getElementById("formid");
@@ -18,52 +16,43 @@ function myFunction()
 const printToDom = (divId, domString)=>{
   document.getElementById(divId).innerHTML += domString;
 }
-// const expelButton = ()=>{    
-//   for (let i = 0; i < fid.length; i++) {
-//     const element = fid[i];
-//     if(element ===document.getElementById('sorting'))
-//     document.getElementById("stud-info-container").style.display = 'none';
-//   } 
-// }
 var i=0;
-const myfun = ()=>{  
+const studentCardBuilder = ()=>{  
   var studName = document.getElementById('inlineFormInputGroup').value;
-    const studentContainer = `<div class="stud-container" id ="stud-info-container-{i}">
-        <h5>${studHouse}</h5>
-        <h5>${studName}</h5>
-        <a class = "remove-stud-info" href="#" value = "${i}" id="expelId">Expel</a>
-      </div>`
-    printToDom('stu-info',studentContainer);     
+  let studentContainer = '<div class="row">'
+  studentContainer =        `<div class="col-4" id = "each-columnId-${i}">
+                              <div class="card" id="student-cardId">
+                                <div class="card-body">
+                                  <h6 class="card-title">${studName}</h6>
+                                  <p class="card-text">${studHouse}</p>
+                                </div>
+                                <button type="button" class="btn btn-danger" value = "${i}" id="expelId" expel">Expel</button>
+                              </div>
+                            </div>
+                          </div>`
     i++;
+    printToDom('stu-info',studentContainer);   
 };
-document.getElementById('sorting').addEventListener('click',myFunction);
-document.body.addEventListener('click', (event) => {
-  if (event.target.id === 'expelId') {
-      const buttonValue = event.target.value;
-      const cardId = `stud-info-container-${buttonValue}`;
-      const card = document.getElementById(cardId);
-      card.parentNode.removeChild(card);
-  }
-  if (event.target.id === 'sortingId') {
-      myfun();
-  }
-});
-
-document.getElementById('sortingId').addEventListener('click', (event) => {
-        event.preventDefault();
-});
-document.body.addEventListener('click', (event) => {
-  if (event.target.id === 'expelId') {
-      const buttonValue = event.target.value;
-      const cardId = `stud-info-container-${buttonValue}`;
-      const card = document.getElementById(cardId);
-      card.parentNode.removeChild(card);
-  }
-  if (event.target.id === 'sortingId') {
-      myfun();
-  }
-});
-
-document.getElementById('sortingId').addEventListener('click', (event) => {
+document.getElementById('sorting').addEventListener('click',(event)=>{
   event.preventDefault();
+  myFunction();  
 });
+document.getElementById('student-sortingId').addEventListener('click', (event) => {
+  event.preventDefault();  
+  const inputField = document.getElementById('inlineFormInputGroup');
+  if(inputField.value != '')
+  {
+    studentCardBuilder();  
+    inputField.value = '';   
+    document.body.addEventListener('click', removes);
+  }
+});
+const removes = (e)=>{  
+  const parentElemen = document.getElementById('each-colId');
+  if (event.target.id === 'expelId') {
+    const valueOfEachClick = event.target.value;
+    const eachStudInfoCardId = `each-columnId-${valueOfEachClick}`;
+    const grabEachStudCardById = document.getElementById(eachStudInfoCardId);
+    grabEachStudCardById.parentNode.removeChild(grabEachStudCardById);
+  }
+}
