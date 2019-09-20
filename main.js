@@ -20,7 +20,7 @@ var i=0;
 const studentCardBuilder = ()=>{  
   var studName = document.getElementById('inlineFormInputGroup').value;
   let studentContainer = '<div class="row">'
-  studentContainer =        `<div class="col-4" id = "each-columnId-${i}">
+  studentContainer =        `<div class="col-4 each-stud-col" id = "each-columnId-${i}">
                               <div class="card" id="student-cardId">
                                 <div class="card-body">
                                   <h6 class="card-title">${studName}</h6>
