@@ -1,11 +1,14 @@
 .each-stud-col{
     margin-bottom: 20px;
 }
-.jumbotron-background{
+.Hogwarts{
     background-color: darkgoldenrod;
     color: #fff;
     text-align: center;
 }
-.jumbotron-background a{
+.Hogwarts a{
     color: #fff;
+}
+.Hogwarts p{
+    text-align: justify;
 }
