@@ -10,5 +10,8 @@
     color: #fff;
 }
 .Hogwarts p{
-    text-align: justify;
+    text-align: center;
+}
+.stud-form-container{
+    margin-left: 16px;
 }

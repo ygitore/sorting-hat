@@ -19,7 +19,7 @@ const printToDom = (divId, domString)=>{
 var i=0;
 const studentCardBuilder = ()=>{  
   var studName = document.getElementById('inlineFormInputGroup').value;
-  let studentContainer = '<div class="row">'
+  let studentContainer = '<div class="row stud-row">'
   studentContainer =        `<div class="col-4 each-stud-col" id = "each-columnId-${i}">
                               <div class="card" id="student-cardId">
                                 <div class="card-body">
