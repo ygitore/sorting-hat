@@ -19,8 +19,8 @@ const printToDom = (divId, domString)=>{
 var i=0;
 const studentCardBuilder = ()=>{  
   var studName = document.getElementById('inlineFormInputGroup').value;
-  let studentContainer = '<div class="row">'
-  studentContainer =        `<div class="col-4" id = "each-columnId-${i}">
+  let studentContainer = '<div class="row stud-row">'
+  studentContainer =        `<div class="col-4 each-stud-col" id = "each-columnId-${i}">
                               <div class="card" id="student-cardId">
                                 <div class="card-body">
                                   <h6 class="card-title">${studName}</h6>
@@ -50,9 +50,12 @@ document.getElementById('student-sortingId').addEventListener('click', (event) =
 const removes = (e)=>{  
   const parentElemen = document.getElementById('each-colId');
   if (event.target.id === 'expelId') {
-    const valueOfEachClick = event.target.value;
-    const eachStudInfoCardId = `each-columnId-${valueOfEachClick}`;
-    const grabEachStudCardById = document.getElementById(eachStudInfoCardId);
-    grabEachStudCardById.parentNode.removeChild(grabEachStudCardById);
+    if(confirm('Are you sure you want to delete?'))
+    {
+      const valueOfEachClick = event.target.value;
+      const eachStudInfoCardId = `each-columnId-${valueOfEachClick}`;
+      const grabEachStudCardById = document.getElementById(eachStudInfoCardId);
+      grabEachStudCardById.parentNode.removeChild(grabEachStudCardById);
+    }
   }
 }
